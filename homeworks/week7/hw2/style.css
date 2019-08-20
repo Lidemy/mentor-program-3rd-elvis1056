@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ede7f6;
+    box-sizing: border-box;
+}
+
+.topBanner {
+    background-image: url(https://lh4.googleusercontent.com/D8mg3Si1HdIqdyXPlHr4wcABUnLlMbYw9hRqhSzMNPD6i2uX70Y1Gufr7JuVvPiN4hL92VwJOJ_J7eddg_KafU3GIg8MqYrcYmi1P9p7dsl2h54bjVsGNR9FQcUG=w1200);
+    height: 278px;
+    background-size: cover;
+}
+
+.containerBackground {
+    width: 640px;
+    margin: auto;
+}
+
+.container__form {
+    margin-top: -100px;
+    background-color: white;
+}
+
+.container {
+    border: 1px solid;
+    padding: 34px 0;
+}
+
+.container__top {
+    background-color: purple;
+    height: 8px;
+}
+
+.container__footer {
+    margin: 34px 0;
+    text-align: center;
+}
+
+.top {
+    padding: 0 34px;
+}
+
+.title {
+    font-size: 36px;
+    line-height: 135%;
+}
+
+.title__description {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.title__require {
+    font-size: 16px;
+    color: #d93025;
+}
+
+.allContent {
+    padding: 0 34px;
+}
+.content {
+    padding: 17px 0;
+    margin: 17px 0;
+}
+
+.content__title {
+    font-size: 24px;
+}
+
+.content__description {
+    font-size: 12px;
+}
+
+.content__requireStar {
+    color: #d93025;
+}
+
+.content__input {
+    width: 50%;
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid;
+    line-height: 24px;
+    height: 24px;
+    font: 400 16px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+}
+.content__input:focus {
+    outline: none;
+}
+
+.content__warn {
+    margin-top: 15px;
+    color: #d93025;
+}
+
+.content__formWarn {
+    margin-top: 15px;
+    color: rgba(0,0,0,0.54);
+    font: 400 12px Robot; 
+}
+
+.submit {
+    background-color: #1a73e8;
+    cursor: pointer;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.footer__logodiv {
+    margin: 17px 0;
+}
+
+.footer__logo {
+    margin: 17px 0;
+    color: black;
+    opacity: .26;
+    text-decoration: none;
+}
+
+.footer__logodepscription {
+    font-family: 'Product Sans',Arial,Helvetica,sans-serif;
+    font-size: 22.1px;
+    position: relative;
+    top: -6px;
+}
+
+.focus__redBottom {
+    border-bottom: 1px solid red;
+}
+
+.content__warnBlock {
+    background-color: #fce8e6;
+}
+
+.hide {
+    display: none;
+}
