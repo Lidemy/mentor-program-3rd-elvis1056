@@ -67,9 +67,7 @@ function getGamesStream(gameUserClick) {
 window.onload = () => {
   getTopGames();
   q('.navbar-games').addEventListener('click', (e) => {
-    if (e.target.innerText.length > 50) {
-      alert('please click your favorite game!');
-    } else {
+    if (e.target.innerText.length < 50) {
       q('.container').innerHTML = '';
       const gameUserClick = e.target.innerText;
       getGamesStream(gameUserClick);
