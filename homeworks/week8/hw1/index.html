@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week8.hw1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+    </head>
+    <style>
+        .block {
+            margin: 200px auto 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .btn {
+            font-size: 24px;
+            border: 1px solid;
+            padding: 10px;
+            background-color: transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.2);
+            background-color: #33FFFF;
+        }
+        .main {
+            border: 1px solid;
+            margin: 20px auto;
+            width: 600px;
+        }
+        .hide {
+            display: none;
+        }
+        .result__text {
+            margin: 30px;
+            text-align: center;
+        }
+        .result__title {
+            text-align: center;
+        }
+        .result__pic {
+            width: 100%;
+            height: 400px;
+        }
+
+    </style>
+    <body>
+        <div class="block">
+            <button class="btn">開始抽獎 ></button>
+        </div>
+        <div class="main"></div>
+    </body>
+    <script>
+        
+        const q = (element) => document.querySelector(element);
+
+        let obj = {};
+
+        function checkPrize(prize) {
+            q('.btn').classList.add('hide');
+            const main = q('.main')
+            const divText = document.createElement('div');
+            const divTitle = document.createElement('div');
+            const divPicture = document.createElement('img');
+            divText.classList.add('result__text');
+            divPicture.classList.add('result__pic');
+            q('.main').appendChild(divTitle);
+            q('.main').appendChild(divText);
+            q('.main').appendChild(divPicture);
+            switch (prize) {
+                case 'NONE':
+                    q('.result__text').innerText = ('銘謝惠顧');
+                    q('.result__text').style.color = 'white';
+                    q('.result__text').style.fontSize = '48px';
+                    q('.result__pic').classList.add('hide');
+                    q('body').style.backgroundColor = 'black';
+                    break
+                case 'FIRST':
+                    q('.result__text').style.fontSize = '48px';
+                    q('.result__text').innerText = '恭喜你中頭獎了！日本東京來回雙人遊！';
+                    q('.result__pic').setAttribute('src','airplane.jpg');
+                    q('body').style.backgroundColor = '#87CEEB';
+                    break
+                case 'SECOND':
+                    q('.result__text').style.fontSize = '48px';
+                    q('.result__text').innerText = '二獎！90 吋電視一台！';
+                    q('.result__pic').setAttribute('src','tv.jpg');
+                    break
+                case 'THIRD':
+                    q('.result__text').style.fontSize = '48px';
+                    q('.result__text').innerText = ('恭喜你抽中三獎：知名 YouTuber 簽名握手會入場券一張，bang！');
+                    q('.result__pic').setAttribute('src','youtube.png');
+                    break
+                default:
+                    q('body').removeChild(main);
+                    alert('系統不穩定，請再試一次');
+            }
+        }
+
+        document.querySelector('.btn').addEventListener('click', () => {
+            fetch('https://dvwhnbka7d.execute-api.us-east-1.amazonaws.com/default/lottery')
+                .then((response) => {
+                    console.log(response);
+                    return response.json();
+                })
+                .then((response) => {
+                    checkPrize(response.prize);
+                }).catch(() => {
+                    q('body').removeChild(main);
+                    alert('系統不穩定，請再試一次');
+                })
+        })
+
+    </script>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>week8.hw1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    margin: 50px auto 0;
+    width: 900px;
+    font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+    border: 1px solid; //須刪除
+  }
+
+  .title {
+    margin-top: 30px;
+    font-size: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .comments {
+    margin: 0 auto;
+    width: 600px;
+  }
+
+  .row {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .new-comment {
+    position: relative;
+    margin: 0 auto;
+    width: 600px;
+  }
+
+  .new-comment-title {
+    padding: 15px;
+    font-size: 28px;
+  }
+
+  .new-comment-des {
+    width: 100%;
+    height: 200px;
+    margin: 15px;
+  }
+
+  .btn {
+    font-size: 18px;
+    border-radius: 4px;
+    margin: 15px;
+    text-decoration: none;
+    background-color: blueviolet;
+    color: #FFFF00;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="title">
+      美食留言板
+    </div>
+    <br>
+    <div class="comments">
+      <div class="row">
+        <div class="comment-id">我是誰</div>
+        <hr>
+        <div class="comment-text">testtest</div>
+      </div>
+      <div class="row">
+        <div class="comment-id">你是誰</div>
+        <hr>
+        <div class="comment-text">測試測試</div>
+      </div>
+      <div class="row">
+        <div class="comment-id">我是誰</div>
+        <hr>
+        <div class="comment-text">xxx</div>
+      </div>
+    </div>
+    <div class="new-comment">
+      <div class="new-comment-title">寫下你的專屬留言</div>
+      <textarea class="new-comment-des"></textarea>
+      <button class="btn" type="submit">送出留言</button>
+    </div>
+  </div>
+</body>
+<script>
+  const q = (element) => document.querySelector(element);
+
+  function createComments(response) {
+    console.log(response);
+    for (let i = 0; i < response.length; i += 1) {
+      let id = response[i].id;
+      let content = response[i].content;
+      const divrow = document.createElement('div')
+      divrow.classList.add('row');
+      divrow.innerHTML = `
+      <div class="comment-id">${id}</div>
+      <hr>
+      <div class="comment-text">${content}</div>
+      `;
+      q('.comments').appendChild(divrow);
+    }
+
+  }
+
+  fetch('https://lidemy-book-store.herokuapp.com/posts/')
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      createComments(response);
+    }).catch(() => {
+      alert('系統不穩定，請再試一次');
+    })
+
+  function postComment() {
+    const xhr = new XMLHttpRequest();
+    const text = `content=${q('.new-comment-des').value}`;
+    xhr.open('POST', 'https://lidemy-book-store.herokuapp.com/posts/');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    try {
+      xhr.send(text);
+    } catch (e) {
+      console.log('error');
+    };
+  }
+
+  q('.btn').addEventListener('click', () => {
+    if (q('.new-comment-des').value === '') {
+      alert('沒有看到你的專屬留言，再檢查一下')
+    } else {
+      postComment();
+      q('.new-comment-des').value = '';
+      alert('成功留下專屬留言')
+    }
+  })
+</script>
+</html>
