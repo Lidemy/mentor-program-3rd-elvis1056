@@ -1,6 +1,4 @@
-const q = (element) => {
-  document.querySelector(element);
-};
+const q = element => document.querySelector(element);
 
 function makeLiveGameBlock(streamsLiveNow) {
   const newBlock = document.createElement('a');

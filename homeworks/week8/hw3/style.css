@@ -31,6 +31,11 @@ body {
     margin: 0 10px;
 }
 
+.nav-description {
+    text-align: center;
+    background-color: wheat;
+}
+
 .gameTitle {
     color: white;
     margin: 15px auto;
@@ -100,5 +105,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
+}
+
+.footer {
+    color: white;
+    margin: 15px 0;
+    text-align: center;
 }
