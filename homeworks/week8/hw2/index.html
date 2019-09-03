@@ -17,7 +17,7 @@
     margin: 50px auto 0;
     width: 900px;
     font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
-    border: 1px solid; //須刪除
+    border: 1px solid;
   }
 
   .title {
@@ -99,7 +99,6 @@
   const q = (element) => document.querySelector(element);
 
   function createComments(response) {
-    console.log(response);
     for (let i = 0; i < response.length; i += 1) {
       let id = response[i].id;
       let content = response[i].content;
@@ -112,18 +111,7 @@
       `;
       q('.comments').appendChild(divrow);
     }
-
   }
-
-  fetch('https://lidemy-book-store.herokuapp.com/posts/')
-    .then((response) => {
-      return response.json();
-    })
-    .then((response) => {
-      createComments(response);
-    }).catch(() => {
-      alert('系統不穩定，請再試一次');
-    })
 
   function postComment() {
     const xhr = new XMLHttpRequest();
@@ -137,14 +125,39 @@
     };
   }
 
+  function getNewComment() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET','https://lidemy-book-store.herokuapp.com/posts?_limit=20&_sort=id&_order=asc');
+    xhr.send();
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 400) {
+        q('.comments').innerHTML = '';
+        const data = JSON.parse(xhr.responseText);
+        createComments(data);
+      }
+    }
+  }
+
   q('.btn').addEventListener('click', () => {
     if (q('.new-comment-des').value === '') {
       alert('沒有看到你的專屬留言，再檢查一下')
     } else {
       postComment();
       q('.new-comment-des').value = '';
+      getNewComment();
       alert('成功留下專屬留言')
     }
   })
+
+  fetch('https://lidemy-book-store.herokuapp.com/posts/')
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      createComments(response);
+    }).catch(() => {
+      alert('系統不穩定，請再試一次');
+    })
+
 </script>
 </html>
