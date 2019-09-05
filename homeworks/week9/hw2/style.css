@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    background-image: url(./home-page.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* opacity: 1; */
+}
+
+.navbar {
+    background-color: #f8f9fa;
+    opacity: 0.8;
+    display: flex;
+    margin: 15px;
+}
+
+.nav-title {
+    display: flex;
+    align-items: center;
+}
+
+.nav-items {
+    display: flex;
+    direction: row;
+}
+
+.nav-item {
+    padding: 15px;
+}
+
+.margin-left-15 {
+    margin-left: 15px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.title {
+    text-align: center;
+    font-size: 48px;
+}
+
+.board-write {
+    width: 100%;
+}
+
+.board-name {
+    font-size: 40px;
+    padding: 30px 0;
+}
+
+.board-btn {
+    padding: 15px;
+    border-radius: 6px;
+    background-color:#DEB887;
+    border: #DEB887;
+    cursor: pointer;
+}
+
+.board-btn:hover {
+    padding: 15px;
+    color: #fff;
+    border-radius: 6px;
+    background-color: #D2B48C;
+    border-color: #D2B48C;
+}
+
+.board-write-text {
+    width: 100%;
+}
+
+.comments {
+    background-color: white;
+}
+
+.comment-id {
+    padding: 30px;
+}
+
+.comment-content {
+    padding: 0 30px 30px;
+}
+
+.register {
+    text-align: center;
+}
+
+.padding-top-30 {
+    padding-top: 30px;
+}
+
+.padding-bottom-30 {
+    padding-bottom: 30px;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
