@@ -1,5 +1,6 @@
 <?php
     include_once('./conn.php');
+    include_once('./utils.php');
     $is_error = false;
     if (isset($_POST["nickname"]) && isset($_POST["account"]) && isset($_POST["password"])) {
         $nickname = $_POST["nickname"];
@@ -9,9 +10,8 @@
         if (!empty($_POST["nickname"]) && !empty($_POST["account"]) && !empty($_POST["password"])) {
             $sql = "INSERT INTO board_register (nickname, account, password) VALUES ('$nickname', '$account', '$hash_password')";
             $conn->query($sql);
+            setToken($conn, $nickname);
             $conn->close();
-            setcookie("account",$account, time()+3600*24);
-            setcookie("nickname", $nickname, time()+3600*24);
             header("Location: index.php");
         } else {
             $is_error = true;
