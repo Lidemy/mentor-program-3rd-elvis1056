@@ -7,7 +7,8 @@ function Stack() {
       return arr;
     },
     pop: () => {
-      arr.splice(0, 1);
+      const { length } = arr.length;
+      arr.splice(length - 1, 1);
       return arr;
     },
   };
@@ -29,8 +30,7 @@ function Queue() {
       return arr;
     },
     pop: () => {
-      const { length } = arr.length;
-      arr.splice(length - 1, 1);
+      arr.splice(0, 1);
       return arr;
     },
   };
