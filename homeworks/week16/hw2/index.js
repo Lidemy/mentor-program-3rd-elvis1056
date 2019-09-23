@@ -1,5 +1,5 @@
 
-function Queue() {
+function Stack() {
   const arr = [];
   return {
     push: (x) => {
@@ -13,15 +13,15 @@ function Queue() {
   };
 }
 
-const queue = new Queue();
+const stack = new Stack();
 
-console.log(queue.push(5));
-console.log(queue.push(6));
-console.log(queue.push(7));
-console.log(queue.pop());
-console.log(queue.pop());
+console.log(stack.push(5));
+console.log(stack.push(6));
+console.log(stack.push(7));
+console.log(stack.pop());
+console.log(stack.pop());
 
-function Stack() {
+function Queue() {
   const arr = [];
   return {
     push: (x) => {
@@ -36,10 +36,10 @@ function Stack() {
   };
 }
 
-const stack = new Stack();
+const queue = new Queue();
 
-console.log(stack.push(2));
-console.log(stack.push(3));
-console.log(stack.push(4));
-console.log(stack.pop());
-console.log(stack.pop());
+console.log(queue.push(2));
+console.log(queue.push(3));
+console.log(queue.push(4));
+console.log(queue.pop());
+console.log(queue.pop());
