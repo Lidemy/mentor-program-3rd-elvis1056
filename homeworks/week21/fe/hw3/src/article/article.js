@@ -3,7 +3,7 @@
 
 import React, { Component } from 'react';
 import ArticleList from './articleList';
-import ArticlePage from './ArticlePage';
+import ArticlePage from './articlePage';
 
 class Articles extends Component {
   constructor(props) {
