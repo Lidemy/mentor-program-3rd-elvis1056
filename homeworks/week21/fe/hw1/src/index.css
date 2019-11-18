@@ -1,0 +1,97 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: calc(1.25vw + 12px);
+  margin: 50px 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  text-align: center;
+}
+
+.add_item {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.filter {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.add_todo {
+  width: 80%;
+  padding: 10px;
+}
+
+.add_todo_btn {
+  padding: 11px 6px;
+  border-radius: 4px;
+  background-color: #7B72E9;
+  border-color: #7B72E9;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.add_todo_btn:hover {
+  background-color: #a49ef0;
+  border-color: #a49ef0;
+  color: #FFF;
+}
+
+.todos {
+  width: 80%;
+  margin: 0 auto;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.3);
+  margin: 5px 0;
+}
+
+.check {
+  margin-right: 20px; 
+}
+
+.content {
+  width: 100%;
+}
+
+.content_edit {
+  width: 100%;
+}
+
+.edit {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.content_edit_cancel {
+  text-align: center;
+  width: 10%;
+  margin: 0 0 0 5px;
+  cursor: pointer;
+}
+
+.delete {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.none {
+  display: none;
+}

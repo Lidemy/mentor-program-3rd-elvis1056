@@ -1,0 +1,96 @@
+.nav {
+    background-color: #ABFFDE;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container {
+    background-color: #FFF3E6;
+    text-align: center;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.nav__list {
+    list-style: none;
+}
+
+.nav__logo {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ABC5FF;
+    cursor: pointer;
+}
+
+.nav__item {
+    display: inline-block;
+    padding: 10px;
+    background-color: #B8F3FF;
+    transition: background 0.3s;
+}
+
+.nav__item:hover {
+    background-color: #9BC7E8;
+    cursor: pointer;
+}
+
+.content__list {
+    list-style: none;
+}
+
+.content__title {
+    font-size: calc(1.125vw + 26.4px);
+}
+
+.articles {
+    margin: 0 auto;
+}
+
+.article {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    font-size: calc(0.5vw + 14.4px);
+}
+
+.article:hover {
+    cursor: pointer;
+    background-color: #ABC5FF;
+    transition: background 0.2s;
+}
+
+.article__id {
+    width: calc(1440px*0.3);
+}
+
+.article__title {
+    width: calc(1440px*0.7);
+}
+
+.oneArticle-title {
+    margin-top: 30px;
+    font-size: calc(0.5vw + 14.4px);
+}
+
+.oneArticle-content {
+    font-size: calc(0.375vw + 12.8px);
+    width: 50%;
+    margin: 0 auto;
+}
+
+.oneArticle-btn {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #9BC7E8;
+    padding: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+}
+
+.oneArticle-btn:hover {
+    cursor: pointer;
+    background: #ABC5FF;
+}
