@@ -35,7 +35,7 @@ class Articles extends Component {
         <div className="content__title">Welcome Articles Page</div>
         <div className="articles">
           {vaildData.map(article => (
-            <Link to={`/articles/${article.id}`} key={`${article.id}`} className="article">
+            <Link to={`/react_blog_hw22/articles/${article.id}`} key={`${article.id}`} className="article">
               <div className="article__id">{article.id}</div>
               <div className="article__title">{article.title}</div>
             </Link>

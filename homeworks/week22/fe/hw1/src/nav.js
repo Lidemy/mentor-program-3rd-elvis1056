@@ -8,13 +8,13 @@ export default function Nav() {
   return (
     <div className="nav__list">
       <div className="nav__logo">
-        <Link to="/">Blog</Link>
+        <Link to="/react_blog_hw22">Blog</Link>
       </div>
       <div className="nav__item margin-right-15">
-        <Link to="/articles">Article</Link>
+        <Link to="/react_blog_hw22/articles">Article</Link>
       </div>
       <div className="nav__item margin-right-15">
-        <Link to="/about">About</Link>
+        <Link to="/react_blog_hw22/about">About</Link>
       </div>
     </div>
   );

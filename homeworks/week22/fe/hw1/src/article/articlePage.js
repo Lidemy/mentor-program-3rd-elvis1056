@@ -29,7 +29,7 @@ class ArticlePage extends Component {
         <br />
         <div className="oneArticle-content">{ data.body }</div>
         <br />
-        <Link to="/articles" className="oneArticle-btn">Back</Link>
+        <Link to="/react_blog_hw22/articles" className="oneArticle-btn">Back</Link>
       </div>
     );
   }

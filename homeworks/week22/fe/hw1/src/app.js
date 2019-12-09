@@ -10,12 +10,8 @@ import About from './about/about';
 import Articles from './article/article';
 import ArticlePage from './article/articlePage';
 
+/* eslint-disable-next-line */
 class App extends Component {
-  constructor() {
-    super();
-    this.handlePageChange = this.handlePageChange.bind(this);
-  }
-
   render() {
     return (
       <div>
@@ -23,10 +19,10 @@ class App extends Component {
           <Router>
             <Nav />
             <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/articles" exact component={Articles} />
-              <Route path="/articles/:id" component={ArticlePage} />
-              <Route path="/about" component={About} />
+              <Route path="/react_blog_hw22/" exact component={Home} />
+              <Route path="/react_blog_hw22/articles" exact component={Articles} />
+              <Route path="/react_blog_hw22/articles/:id" component={ArticlePage} />
+              <Route path="/react_blog_hw22/about" component={About} />
             </Switch>
           </Router>
         </div>
